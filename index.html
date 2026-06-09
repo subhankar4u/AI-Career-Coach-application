@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PivotPath AI Career Coach</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">P</span>
+        <span>PivotPath</span>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#coach">Coach</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#interview">Interview</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">AI career strategy for working professionals</p>
+          <h1>PivotPath</h1>
+          <p>
+            Turn a current role, target move, and weekly time budget into a practical career plan with skill priorities,
+            positioning advice, and interview preparation.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#coach">Build my plan</a>
+            <a class="button secondary" href="#roadmap">View roadmap</a>
+          </div>
+        </div>
+        <img
+          src="assets/career-coach-workspace.png"
+          alt="A modern workspace with a career dashboard on a laptop"
+        />
+      </section>
+
+      <section class="workspace" id="coach">
+        <aside class="panel input-panel" aria-label="Career profile">
+          <div class="section-title">
+            <p class="eyebrow">Profile</p>
+            <h2>Career Inputs</h2>
+          </div>
+
+          <label>
+            Current role
+            <input id="currentRole" value="Senior Analyst" />
+          </label>
+
+          <label>
+            Target role
+            <input id="targetRole" value="Product Manager" />
+          </label>
+
+          <label>
+            Experience level
+            <select id="experience">
+              <option>3-5 years</option>
+              <option selected>6-10 years</option>
+              <option>10+ years</option>
+            </select>
+          </label>
+
+          <label>
+            Career goal
+            <select id="goal">
+              <option selected>Switch functions</option>
+              <option>Earn a promotion</option>
+              <option>Move into leadership</option>
+              <option>Return after a career break</option>
+              <option>Prepare for job search</option>
+            </select>
+          </label>
+
+          <label>
+            Weekly learning time
+            <input id="hours" type="range" min="2" max="15" value="6" />
+            <span class="range-value"><span id="hoursValue">6</span> hours per week</span>
+          </label>
+
+          <label>
+            Current strengths
+            <textarea id="strengths">analytics, stakeholder communication, process improvement, dashboarding</textarea>
+          </label>
+
+          <label>
+            Skill gaps or concerns
+            <textarea id="gaps">product discovery, roadmap ownership, technical tradeoffs, interview storytelling</textarea>
+          </label>
+
+          <button id="generatePlan" class="button primary full" type="button">Generate coaching plan</button>
+        </aside>
+
+        <section class="coach-output" aria-live="polite">
+          <div class="score-strip">
+            <div>
+              <span id="fitScore">76</span>
+              <small>Fit score</small>
+            </div>
+            <div>
+              <span id="readiness">12 weeks</span>
+              <small>Ramp time</small>
+            </div>
+            <div>
+              <span id="focusArea">Positioning</span>
+              <small>Primary focus</small>
+            </div>
+          </div>
+
+          <div class="result-grid">
+            <article class="result-card wide">
+              <div class="card-heading">
+                <p class="eyebrow">Coach Brief</p>
+                <h2 id="briefTitle">From Senior Analyst to Product Manager</h2>
+              </div>
+              <p id="coachBrief"></p>
+            </article>
+
+            <article class="result-card">
+              <div class="card-heading">
+                <p class="eyebrow">Positioning</p>
+                <h3>Your story</h3>
+              </div>
+              <ul id="positioningList"></ul>
+            </article>
+
+            <article class="result-card">
+              <div class="card-heading">
+                <p class="eyebrow">Skill Gaps</p>
+                <h3>Priorities</h3>
+              </div>
+              <ul id="skillList"></ul>
+            </article>
+
+            <article class="result-card wide" id="roadmap">
+              <div class="card-heading">
+                <p class="eyebrow">Roadmap</p>
+                <h3>Next 90 days</h3>
+              </div>
+              <div id="roadmapList" class="timeline"></div>
+            </article>
+
+            <article class="result-card" id="interview">
+              <div class="card-heading">
+                <p class="eyebrow">Interview Prep</p>
+                <h3>Practice prompts</h3>
+              </div>
+              <ul id="interviewList"></ul>
+            </article>
+
+            <article class="result-card">
+              <div class="card-heading">
+                <p class="eyebrow">This Week</p>
+                <h3>Action plan</h3>
+              </div>
+              <ul id="actionList"></ul>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

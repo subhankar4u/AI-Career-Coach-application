@@ -1,0 +1,14 @@
+# Operating system files
+Thumbs.db
+.DS_Store
+
+# Editor settings
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Generated archives
+*.zip
